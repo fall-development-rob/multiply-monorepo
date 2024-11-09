@@ -1,0 +1,82 @@
+version: 2
+updates:
+    # Root package dependencies
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+      time: "07:00"
+      timezone: Europe/London
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    commit-message:
+      prefix: chore
+    labels:
+      - 'dependencies'
+      - 'root'
+    groups:
+      dependencies:
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
+      devDependencies:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+
+  # Frontend dependencies
+  - package-ecosystem: 'npm'
+    directory: '/packages/multiply-frontend'
+    schedule:
+      interval: weekly
+      day: monday
+      time: "07:00"
+      timezone: Europe/London
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    commit-message:
+      prefix: chore
+    labels:
+      - 'dependencies'
+      - 'frontend'
+    groups:
+      dependencies:
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
+      devDependencies:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+
+  # Backend dependencies
+  - package-ecosystem: 'pip'
+    directory: '/backend'
+    schedule:
+      interval: weekly
+      day: monday
+      time: "07:00"
+      timezone: Europe/London
+    open-pull-requests-limit: 10
+    versioning-strategy: increase
+    commit-message:
+      prefix: chore
+    labels:
+      - 'dependencies'
+      - 'backend'
+    groups:
+      dependencies:
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
+      devDependencies:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
