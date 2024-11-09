@@ -56,7 +56,7 @@ updates:
 
   # Backend dependencies
   - package-ecosystem: 'pip'
-    directory: '/backend'
+    directory: '/packages/multiply-backend'
     schedule:
       interval: weekly
       day: monday
