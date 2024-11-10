@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./packages/multiply-frontend
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+  backend:
+    build: ./packages/multiply-backend
+    ports:
+      - '5000:5000'

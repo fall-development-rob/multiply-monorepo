@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./packages/multiply-frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./packages/multiply-frontend:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./packages/multiply-backend
+      dockerfile: Dockerfile.dev
+    ports:
+      - '5000:5000'
+    volumes:
+      - ./packages/multiply-backend:/app
+      - /app/__pycache__
+    environment:
+      - FLASK_ENV=development
