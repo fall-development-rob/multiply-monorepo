@@ -1,5 +1,5 @@
 # Use the official Python image for development
-FROM python:3.9-slim
+FROM python:3.12
 
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app
@@ -7,11 +7,15 @@ WORKDIR /app
 # Install Poetry
 RUN pip install poetry
 
+# Clear Cache
+RUN poetry cache clear --all pypi
+
 # Copy dependency files
 COPY pyproject.toml poetry.lock ./
 
 # Install dependencies without creating virtual environments
-RUN poetry config virtualenvs.create false && poetry install --no-interaction --no-ansi
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-interaction --no-ansi
 
 # Copy the application code
 COPY . .

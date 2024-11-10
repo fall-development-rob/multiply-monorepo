@@ -1,2 +1,2 @@
-FLASK_APP=multiply_backend_coding_task.api:app
+FLASK_APP=src.api:app
 FLASK_DEBUG=1
