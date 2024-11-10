@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "multiply_backend_coding_task"
+name = "src"  
 version = "0.1.0"
-description = ""
-authors = ["Michael Curtis <mike@multiply.ai>"]
+description = "Backend service for the Multiply project using Flask"
+authors = ["Michael Curtis <mike@multiply.ai>", "Robert Fall <fall.development@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-Flask = "^2.1.2"
-python-dotenv = "*"
+python = "^3.12"
+flask = "^2.1.2"
+python-dotenv = "^1.0.1"  # Use the latest version available instead of "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
@@ -17,6 +17,4 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
-pythonpath = [
-  "."
-]
+pythonpath = ["."]
