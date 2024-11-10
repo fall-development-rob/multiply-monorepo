@@ -1,11 +1,13 @@
 # Use the official Python image for production
-FROM python:3.9-slim
+FROM python:3.12
 
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # Install Poetry
 RUN pip install poetry
+
+RUN poetry cache clear --all pypi
 
 # Copy dependency files
 COPY pyproject.toml poetry.lock ./
