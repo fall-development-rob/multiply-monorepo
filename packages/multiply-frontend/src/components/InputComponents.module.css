@@ -1,0 +1,40 @@
+/* src/components/InputComponents.module.css */
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input {
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.inputError {
+    border: 1px solid red;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+.radioLabel,
+.checkboxLabel {
+    margin-right: 15px;
+    font-weight: normal;
+    color: #555;
+}
+
+.checkboxContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
