@@ -6,7 +6,7 @@ def client():
     with app.test_client() as client:
         yield client
 
-def test_create_user(client):
+def test_createUser(client):
     response = client.post('/user', json={
         'firstName': 'Jan',
         'email': 'jan@multiply.ai'
