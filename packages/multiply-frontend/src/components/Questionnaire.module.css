@@ -1,0 +1,66 @@
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+.successMessage {
+    color: green;
+    font-size: 18px;
+    text-align: center;
+    padding: 20px;
+}
+
+.review {
+    margin-top: 20px;
+}
+
+.answerList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.answerItem {
+    margin-bottom: 15px;
+}
+
+.answerValue {
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.buttonContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.buttonPrimary {
+    background-color: #4caf50;
+    color: white;
+}
+
+.buttonSecondary {
+    background-color: #f1f1f1;
+    color: black;
+}
