@@ -4,5 +4,5 @@ from src.models import User
 
 class UserServiceInterface(ABC):
     @abstractmethod
-    def create_user(self, user_data: User) -> User:
+    def createUser(self, user_data: User) -> User:
         pass
