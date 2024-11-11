@@ -1,26 +1,24 @@
-from flask import Flask, request, jsonify
+from flask import Flask
 
-from src.models.User import User
-
-from src.services.UserService import UserService
-
-from src.repositories.UserRepository import UserRepository
 import logging
 
+from src.routes import registerRoutes
+
 app = Flask(__name__)
-logger = logging.getLogger(__name__)
 
-@app.route('/user', methods=['POST'])
-def createUser():
-    try:
-        data = request.get_json()
-        user_data = User(**data)
+def createApp():
+    # Configure logging
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s %(levelname)s [%(name)s] %(message)s',
+        handlers=[
+            logging.StreamHandler()
+        ]
+    )
 
-        user_service = UserService(UserRepository())
+    # Set up routes
+    registerRoutes(app)
+    return app
 
-        user = user_service.create_user(user_data)
-        return jsonify({'userId': user.user_id}), 201
-    except Exception as e:
-        logger.exception("Unhandled exception in create_user.")
-        return jsonify({'error': 'An internal error occurred.'}), 500
+app = createApp()
     
