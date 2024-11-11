@@ -9,6 +9,7 @@ python = "^3.12"
 flask = "^2.1.2"
 python-dotenv = "^1.0.1"  # Use the latest version available instead of "*"
 packaging = ">=24.0"
+pydantic = "^2.9.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
